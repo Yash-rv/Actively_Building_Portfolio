@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yash RV | Visionary Video Editor</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css_featured_videos.css">
+    <link rel="stylesheet" href="hero_videos.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     </head>
 <body>
@@ -38,64 +38,63 @@
             <div class="container hero-content">
                 <h1><span>Hi, I'm a&nbsp;</span><span class="typing-effect"></span></h1>
                 <p class="tagline">Crafting visually stunning narratives that captivate audiences.</p>
-                <div class="main-reel-wrapper">
-                    <div id="video-loader">Holup, an epic video is loading...</div>
-                    <div class="video-container">
-                        <video class="vertical-video" controls loop playsinline>
-                            <source src="videos/Portfolio/Main.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div id="tap-to-play-overlay">
-                            <div class="tap-text">Tap to Play</div>
+                <!-- Hero Videos Section -->
+                <section class="hero-videos">
+                    <div class="container">
+                        <!-- Main Video -->
+                        <div class="video-item main-video-item">
+                            <div class="video-container">
+                                <video muted autoplay loop playsinline>
+                                    <source src="videos/Portfolio/Main.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay">
+                                    <p>Tap to play with sound</p>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h2>Showcase Reel</h2>
+                                <p>Motion graphic reel demonstrating creativity and capabilities. These reels are useful for businesses to showcase their brand effectively.</p>
+                            </div>
+                        </div>
+
+                        <!-- Square Video (2.mp4) -->
+                        <div class="video-item square-video">
+                            <div class="video-container">
+                                <video muted autoplay loop playsinline>
+                                    <source src="videos/Portfolio/Music Video Graphics/2.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay">
+                                    <p>Tap to play with sound</p>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h2>Music Graphics</h2>
+                                <p>Music video showcasing creativity and capabilities. I can do anything that I can imagine.</p>
+                                <a href="musicvideos.html" class="view-button">View More Music Videos</a>
+                            </div>
+                        </div>
+
+                        <!-- Vertical Video (Highly_edited.mp4) -->
+                        <div class="video-item">
+                            <div class="video-container">
+                                <video muted autoplay loop playsinline>
+                                    <source src="videos/Portfolio/Influencer_Type/Highly_edited.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-overlay">
+                                    <p>Tap to play with sound</p>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h2>Influencer Content</h2>
+                                <p>High-impact, engaging visual narratives designed for maximum engagement on social platforms.</p>
+                                <a href="influenceredits.html" class="view-button">View More Influencer Edits</a>
+                            </div>
                         </div>
                     </div>
-                    <style>
-                        .video-container {
-                            position: relative;
-                            width: 100%;
-                        }
-                        #tap-to-play-overlay {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            background-color: rgba(0, 0, 0, 0.5);
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            cursor: pointer;
-                            z-index: 10;
-                        }
-                        .tap-text {
-                            color: white;
-                            font-size: 24px;
-                            font-weight: bold;
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-                            padding: 20px 40px;
-                            background-color: rgba(0, 0, 0, 0.6);
-                            border-radius: 10px;
-                        }
-                    </style>
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            const video = document.querySelector('.vertical-video');
-                            const overlay = document.getElementById('tap-to-play-overlay');
-                            
-                            video.volume = 1.0; // Set volume to the highest level
-                            
-                            overlay.addEventListener('click', function() {
-                                video.play();
-                                overlay.style.display = 'none';
-                            });
-                            
-                            // Also hide overlay when video starts playing (e.g. from controls)
-                            video.addEventListener('play', function() {
-                                overlay.style.display = 'none';
-                            });
-                        });
-                    </script>
-                </div>
+                </section>
             </div>
         </section>
 
@@ -136,50 +135,7 @@
             </div>
         </section>
 
-        <!-- Featured Videos Section -->
-        <section class="featured-videos">
-            <div class="section-heading">
-                <h2>Featured Edits</h2>
-                <p>Check out these selected works showcasing my editing style</p>
-            </div>
-            <div class="container">
-                <!-- Square Video (2.mp4) -->
-                <div class="video-item square-video">
-                    <div class="video-container">
-                        <video playsinline loop>
-                            <source src="videos/Portfolio/Music Video Graphics/2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="video-overlay">
-                            <p>Tap to Play</p>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3>Music Video Edit</h3>
-                        <p>A rhythmic fusion of visuals and music, creating an immersive audiovisual experience.</p>
-                        <a href="musicvideos.html" class="view-more-button">View More Music Videos</a>
-                    </div>
-                </div>
 
-                <!-- Vertical Video (HighlyEdited.mp4) -->
-                <div class="video-item">
-                    <div class="video-container">
-                        <video playsinline loop>
-                            <source src="videos/Portfolio/Influencer_Type/Highly_edited.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="video-overlay">
-                            <p>Tap to Play</p>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3>Influencer Content</h3>
-                        <p>High-impact, dynamic editing style perfect for social media and influencer content.</p>
-                        <a href="influenceredits.html" class="view-more-button">View More Influencer Edits</a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <section id="cta-quote">
             <canvas id="quote-starfield"></canvas>
@@ -207,7 +163,7 @@
         </div>
     </footer>
 
+    <script src="hero_videos.js"></script>
     <script src="script.js"></script>
-    <script src="featured_videos.js"></script>
 </body>
 </html>
