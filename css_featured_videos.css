@@ -10,6 +10,7 @@
     gap: 40px;
     flex-wrap: wrap;
     padding: 20px;
+    margin-bottom: 40px; /* Added space between containers */
 }
 
 .featured-videos .section-heading {
@@ -65,10 +66,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
+    opacity: 1; /* Changed from 0 to make overlays visible by default */
     transition: opacity 0.3s ease;
-    pointer-events: none;
+    pointer-events: auto; /* Changed from none to make overlays clickable */
     text-align: center;
+    z-index: 10; /* Ensure overlay is above video */
 }
 
 .video-container:hover .video-overlay {

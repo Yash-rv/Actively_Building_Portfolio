@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("Featured videos script loaded!");
     const videoItems = document.querySelectorAll('.featured-videos .video-item');
+    console.log("Found video items:", videoItems.length);
     const videos = document.querySelectorAll('.featured-videos .video-container video');
+    console.log("Found videos:", videos.length);
     let overlayTimeouts = {}; // Store timeout IDs for each video
 
     videoItems.forEach((videoItem, index) => {
@@ -13,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
         overlay.style.opacity = '1';
         overlayText.textContent = 'Tap to Play';
         
-        // Add click event to the entire video item
-        videoItem.addEventListener('click', (e) => {
+        // Add click event to the video overlay directly
+        overlay.addEventListener('click', (e) => {
             // Prevent event bubbling to avoid conflicts
             e.stopPropagation();
             
@@ -75,6 +78,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Add cursor pointer to indicate clickable area
-        videoItem.style.cursor = 'pointer';
+        overlay.style.cursor = 'pointer';
+        
+        console.log("Setup complete for video", index);
     });
+    
+    console.log("Featured videos initialization complete");
 });
