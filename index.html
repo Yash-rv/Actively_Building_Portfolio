@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yash RV | Visionary Video Editor</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css_featured_videos.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     </head>
 <body>
@@ -135,6 +136,51 @@
             </div>
         </section>
 
+        <!-- Featured Videos Section -->
+        <section class="featured-videos">
+            <div class="section-heading">
+                <h2>Featured Edits</h2>
+                <p>Check out these selected works showcasing my editing style</p>
+            </div>
+            <div class="container">
+                <!-- Square Video (2.mp4) -->
+                <div class="video-item square-video">
+                    <div class="video-container">
+                        <video playsinline loop>
+                            <source src="videos/Portfolio/Music Video Graphics/2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <p>Tap to Play</p>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Music Video Edit</h3>
+                        <p>A rhythmic fusion of visuals and music, creating an immersive audiovisual experience.</p>
+                        <a href="musicvideos.html" class="view-more-button">View More Music Videos</a>
+                    </div>
+                </div>
+
+                <!-- Vertical Video (HighlyEdited.mp4) -->
+                <div class="video-item">
+                    <div class="video-container">
+                        <video playsinline loop>
+                            <source src="videos/Portfolio/Influencer_Type/Highly_edited.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay">
+                            <p>Tap to Play</p>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Influencer Content</h3>
+                        <p>High-impact, dynamic editing style perfect for social media and influencer content.</p>
+                        <a href="influenceredits.html" class="view-more-button">View More Influencer Edits</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="cta-quote">
             <canvas id="quote-starfield"></canvas>
             <div class="container">
@@ -162,5 +208,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="featured_videos.js"></script>
 </body>
 </html>
