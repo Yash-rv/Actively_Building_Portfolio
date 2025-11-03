@@ -35,11 +35,12 @@ body {
 
 /* Video Gallery Layout */
 .video-gallery .container {
-    display: flex;
-    justify-content: center; /* Center items if they don't fill the space */
-    gap: 40px; /* Increased spacing between items */
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
     padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* Individual Video Item Styling */
@@ -48,11 +49,10 @@ body {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Added 'all' and a bounce timing function */
-    flex: 1 1 300px;
-    max-width: 320px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .video-item:hover {
@@ -70,10 +70,7 @@ body {
 
 /* Specific rule for the horizontal video */
 .horizontal-video-item {
-    flex: 1 1 500px; /* Allow it to be wider */
-    max-width: 600px;
-    width: 100%; /* Take full width of container */
-    margin: 0 auto; /* Center the item */
+    grid-column: span 2;
 }
 
 .horizontal-video-item .video-container {
@@ -181,38 +178,34 @@ body {
     }
 
     .video-gallery .container {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
         gap: 30px;
     }
 
     .video-item {
-        max-width: none !important; /* Remove width constraint */
-        width: 90vw !important;
+        width: 100%;
         margin: 0 auto;
-        flex: none !important; /* Override flex properties */
+    }
+
+    .horizontal-video-item {
+        grid-column: span 1;
     }
 
     .video-container {
-        aspect-ratio: 9 / 16 !important; /* Force proper aspect ratio on mobile */
-        max-height: 70vh !important; /* Prevent videos from being too tall */
+        aspect-ratio: 9 / 16 !important;
+        max-height: 70vh !important;
         width: 100% !important;
-        height: auto !important; /* Let height be calculated by aspect ratio */
+        height: auto !important;
     }
 
     .video-container video {
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover !important; /* Ensure video fills container properly */
-    }
-
-    .horizontal-video-item {
-        max-width: 90vw;
-        width: 100%;
+        object-fit: cover !important;
     }
 
     .horizontal-video-item .video-container {
-        aspect-ratio: 16 / 9 !important; /* Maintain proper horizontal video ratio on mobile */
+        aspect-ratio: 16 / 9 !important;
         max-height: 50vh;
     }
 }
