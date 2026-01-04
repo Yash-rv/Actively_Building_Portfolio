@@ -1,0 +1,777 @@
+/* General Body Styles */
+body {
+    background-image: none;
+    background-color: #0a0a0a;
+    color: #ccc;
+    font-family: 'Inter', sans-serif;
+}
+
+.main-header, .main-footer {
+    background-color: transparent;
+}
+
+.main-nav a, .dropbtn { 
+    line-height: 1.0; 
+}
+
+/* Page Hero Section */
+.page-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.page-title {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Container Wide for Project Showcase */
+.container-wide {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Project Showcase Layout - 3 Columns */
+.project-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Left: Stacked Screen Recordings */
+.stacked-recordings {
+    position: relative;
+}
+
+.recording-stack {
+    position: relative;
+    height: 650px;
+}
+
+.video-card {
+    position: absolute;
+    width: 100%;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.stack-item:nth-child(1) {
+    top: 0;
+    left: 0;
+    transform: rotate(-3deg);
+    z-index: 3;
+}
+
+.stack-item:nth-child(2) {
+    top: 200px;
+    left: 20px;
+    transform: rotate(2deg);
+    z-index: 2;
+}
+
+.stack-item:nth-child(3) {
+    top: 400px;
+    left: 10px;
+    transform: rotate(-2deg);
+    z-index: 1;
+}
+
+.video-card:hover {
+    transform: scale(1.05) rotate(0deg) !important;
+}
+
+.video-card video {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.stack-label {
+    padding: 12px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+/* Center: Project Description */
+.project-description {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-description h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.project-description > p {
+    font-size: 1.05rem;
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.workflow-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.detail-item h4 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.detail-item p {
+    font-size: 0.95rem;
+    color: #999;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Right: Final Result */
+.final-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-video-card {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+.result-video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+.result-video-card video {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.result-label {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.result-label h4 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.result-label p {
+    font-size: 0.95rem;
+    color: #888;
+    margin: 0;
+}
+
+/* Blender Section Styles */
+.blender-section {
+    padding: 60px 20px;
+    background-color: #0a0a0a;
+}
+
+.blender-section:nth-child(odd) {
+    background-color: #0f0f0f;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.section-description {
+    font-size: 1rem;
+    color: #888;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Video Grid Layouts */
+.blender-videos-grid {
+    display: grid;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.blender-videos-grid.two-column {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.blender-videos-grid.three-column {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+/* Screen Recordings Row - Horizontal Videos (Larger) */
+.screen-recordings-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Portrait Videos Row - Chess Pieces */
+.portrait-videos-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.chess-pieces-row {
+    max-width: 1000px;
+}
+
+/* Chess Section Layouts */
+.chess-main-video {
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.video-item-chess-main {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.video-item-chess-main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+}
+
+.chess-description {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.chess-description p {
+    font-size: 1.05rem;
+    color: #aaa;
+    line-height: 1.8;
+}
+
+.chess-pieces-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.view-full-video-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.instagram-view-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #1a1a1a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+.instagram-view-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: none;
+    background-color: #222;
+    color: #fff;
+}
+
+/* Medium Video Items for Screen Recordings */
+.video-item-medium {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-item-medium:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.video-container-medium {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.video-container-medium video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+}
+
+.video-info-medium {
+    padding: 18px;
+    background-color: #1a1a1a;
+}
+
+.video-info-medium h3 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 0;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Portrait Video Items */
+.video-item-portrait {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-item-portrait:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.video-info-portrait {
+    padding: 15px;
+    background-color: #1a1a1a;
+}
+
+.video-info-portrait h3 {
+    font-size: 1rem;
+    color: #fff;
+    margin: 0;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Individual Video Item Styling */
+.video-item {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+}
+
+.video-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85);
+}
+
+.video-container {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    overflow: hidden;
+}
+
+/* Small Video Items for Screen Recordings */
+.video-item-small {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-item-small:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+}
+
+.video-container-small {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.video-container-small video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+}
+
+/* Portrait Video Container for Result (9:16) */
+.video-item-result {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.video-item-result:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85);
+}
+
+.video-container-portrait {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 9 / 16;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.video-container-portrait video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+}
+
+/* Video Overlay (Click to play message) */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.video-container:hover .video-overlay {
+    opacity: 1;
+}
+
+.video-overlay p {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Video Info Section */
+.video-info {
+    padding: 25px;
+    background-color: #1a1a1a;
+}
+
+.video-info h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.video-info p {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Video Info Small - For Screen Recordings */
+.video-info-small {
+    padding: 15px;
+    background-color: #1a1a1a;
+}
+
+.video-info-small h3 {
+    font-size: 1rem;
+    color: #fff;
+    margin: 0;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Fade-in animations */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .container-wide {
+        padding: 0 30px;
+    }
+
+    .project-showcase {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .recording-stack {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .stack-item {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+    }
+
+    .video-card:hover,
+    .video-card.active {
+        transform: none !important;
+    }
+
+    .project-description {
+        padding: 0;
+        order: 2;
+    }
+
+    .stacked-recordings {
+        order: 1;
+    }
+
+    .final-result {
+        margin: 0 auto;
+        order: 3;
+    }
+
+    .result-video-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .blender-videos-grid.two-column {
+        grid-template-columns: 1fr;
+    }
+
+    .blender-videos-grid.three-column {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .screen-recordings-row {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .portrait-videos-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .chess-pieces-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .chess-main-video {
+        max-width: 100%;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-title {
+        font-size: 2.2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-description {
+        font-size: 0.9rem;
+    }
+
+    .container-wide {
+        padding: 0 20px;
+    }
+
+    .blender-videos-grid.two-column,
+    .blender-videos-grid.three-column {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .screen-recordings-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .portrait-videos-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .chess-pieces-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .chess-description {
+        margin-bottom: 30px;
+    }
+
+    .chess-description p {
+        font-size: 0.95rem;
+    }
+
+    .instagram-view-btn {
+        padding: 12px 35px;
+        font-size: 1rem;
+    }
+
+    .video-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .video-info p {
+        font-size: 0.9rem;
+    }
+
+    .blender-section {
+        padding: 40px 15px;
+    }
+
+    .video-item-result {
+        max-width: 100%;
+    }
+
+    .project-description h3 {
+        font-size: 1.6rem;
+    }
+
+    .project-description > p {
+        font-size: 0.95rem;
+    }
+
+    .detail-item h4 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .page-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .video-info {
+        padding: 20px;
+    }
+}
