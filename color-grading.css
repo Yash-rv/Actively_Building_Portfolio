@@ -33,7 +33,7 @@ body {
     grid-template-columns: 1fr; /* Default to a single column for mobile */
     gap: 4rem;
     padding: 40px 20px;
-    max-width: 1200px; /* Widen container for multi-column layout */
+    max-width: 1200px; /* Reduced container width back to 1200px */
 }
 
 /* Media query for tablets and desktops */
@@ -127,7 +127,7 @@ body {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 4px;
+    width: 8px;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.9);
     cursor: ew-resize;
@@ -145,8 +145,8 @@ body {
 
 .slider-handle::after {
     content: '';
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.95);
     border: 3px solid rgba(10, 10, 10, 0.6);
