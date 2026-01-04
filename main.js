@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let inactivityTimer;
     let isHeaderVisible = true;
     const header = document.querySelector('.main-header');
-    const inactivityDelay = 3000; // 3 seconds of inactivity
+    const inactivityDelay = 700; // 0.7 seconds of inactivity
 
     function hideHeader() {
         if (header && isHeaderVisible) {
