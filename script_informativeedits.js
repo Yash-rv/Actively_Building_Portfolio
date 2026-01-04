@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const inactivityDelay = 700; // 0.7 seconds of inactivity
 
     function hideHeader() {
-        if (header && isHeaderVisible) {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (header && isHeaderVisible && scrollTop > 100) {
             header.classList.add('header-hidden');
             isHeaderVisible = false;
         }
