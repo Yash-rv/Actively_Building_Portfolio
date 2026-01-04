@@ -1,21 +1,54 @@
 document.addEventListener('DOMContentLoaded', function() {
     let lastScrollTop = 0;
     const header = document.querySelector('.main-header');
+    let inactivityTimer;
+    let isHeaderVisible = true;
+    const inactivityDelay = 3000; // 3 seconds of inactivity
+
+    function hideHeader() {
+        if (header && isHeaderVisible) {
+            header.classList.add('header-hidden');
+            isHeaderVisible = false;
+        }
+    }
+
+    function showHeader() {
+        if (header && !isHeaderVisible) {
+            header.classList.remove('header-hidden');
+            isHeaderVisible = true;
+        }
+    }
+
+    function resetInactivityTimer() {
+        clearTimeout(inactivityTimer);
+        showHeader();
+        inactivityTimer = setTimeout(hideHeader, inactivityDelay);
+    }
     
     function handleScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (scrollTop > lastScrollTop && scrollTop > 100) {
-            header.classList.add('header-hidden');
+            hideHeader();
         } else {
-            header.classList.remove('header-hidden');
+            showHeader();
         }
         
         lastScrollTop = scrollTop;
+        resetInactivityTimer();
     }
     
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleScroll);
+
+    // Listen for user activity to reset inactivity timer
+    document.addEventListener('mousemove', resetInactivityTimer);
+    document.addEventListener('mousedown', resetInactivityTimer);
+    document.addEventListener('keypress', resetInactivityTimer);
+    document.addEventListener('touchstart', resetInactivityTimer);
+
+    // Start the inactivity timer
+    resetInactivityTimer();
 
     const videoItems = document.querySelectorAll('.video-item');
     const videos = document.querySelectorAll('.video-container video');

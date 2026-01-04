@@ -1,7 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Auto-hide header on scroll (mobile only)
+    // Auto-hide header on scroll and inactivity
     let lastScrollTop = 0;
     const header = document.querySelector('.main-header');
+    let inactivityTimer;
+    let isHeaderVisible = true;
+    const inactivityDelay = 3000; // 3 seconds of inactivity
+
+    function hideHeader() {
+        if (header && isHeaderVisible) {
+            header.classList.add('header-hidden');
+            isHeaderVisible = false;
+        }
+    }
+
+    function showHeader() {
+        if (header && !isHeaderVisible) {
+            header.classList.remove('header-hidden');
+            isHeaderVisible = true;
+        }
+    }
+
+    function resetInactivityTimer() {
+        clearTimeout(inactivityTimer);
+        showHeader();
+        inactivityTimer = setTimeout(hideHeader, inactivityDelay);
+    }
     
     function handleScroll() {
         // Apply auto-hide on all screen sizes (both mobile and desktop)
@@ -9,17 +32,27 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (scrollTop > lastScrollTop && scrollTop > 100) {
             // Scrolling down - hide header
-            header.classList.add('header-hidden');
+            hideHeader();
         } else {
             // Scrolling up - show header
-            header.classList.remove('header-hidden');
+            showHeader();
         }
         
         lastScrollTop = scrollTop;
+        resetInactivityTimer();
     }
     
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleScroll);
+
+    // Listen for user activity to reset inactivity timer
+    document.addEventListener('mousemove', resetInactivityTimer);
+    document.addEventListener('mousedown', resetInactivityTimer);
+    document.addEventListener('keypress', resetInactivityTimer);
+    document.addEventListener('touchstart', resetInactivityTimer);
+
+    // Start the inactivity timer
+    resetInactivityTimer();
 
     const videoItems = document.querySelectorAll('.video-item');
     const videos = document.querySelectorAll('.video-container video');

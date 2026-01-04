@@ -24,4 +24,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load header and footer
     loadComponent('header.html', 'header-placeholder');
     loadComponent('footer.html', 'footer-placeholder');
+
+    // Auto-hide header functionality
+    let inactivityTimer;
+    let isHeaderVisible = true;
+    const header = document.querySelector('.main-header');
+    const inactivityDelay = 3000; // 3 seconds of inactivity
+
+    function hideHeader() {
+        if (header && isHeaderVisible) {
+            header.classList.add('header-hidden');
+            isHeaderVisible = false;
+        }
+    }
+
+    function showHeader() {
+        if (header && !isHeaderVisible) {
+            header.classList.remove('header-hidden');
+            isHeaderVisible = true;
+        }
+    }
+
+    function resetInactivityTimer() {
+        clearTimeout(inactivityTimer);
+        showHeader();
+        inactivityTimer = setTimeout(hideHeader, inactivityDelay);
+    }
+
+    // Listen for user activity
+    document.addEventListener('mousemove', resetInactivityTimer);
+    document.addEventListener('mousedown', resetInactivityTimer);
+    document.addEventListener('keypress', resetInactivityTimer);
+    document.addEventListener('scroll', resetInactivityTimer);
+    document.addEventListener('touchstart', resetInactivityTimer);
+
+    // Start the inactivity timer
+    resetInactivityTimer();
 });

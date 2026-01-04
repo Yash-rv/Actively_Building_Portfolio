@@ -1,4 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Auto-hide header functionality
+    const header = document.querySelector('.main-header');
+    let inactivityTimer;
+    let isHeaderVisible = true;
+    const inactivityDelay = 3000; // 3 seconds of inactivity
+
+    function hideHeader() {
+        if (header && isHeaderVisible) {
+            header.classList.add('header-hidden');
+            isHeaderVisible = false;
+        }
+    }
+
+    function showHeader() {
+        if (header && !isHeaderVisible) {
+            header.classList.remove('header-hidden');
+            isHeaderVisible = true;
+        }
+    }
+
+    function resetInactivityTimer() {
+        clearTimeout(inactivityTimer);
+        showHeader();
+        inactivityTimer = setTimeout(hideHeader, inactivityDelay);
+    }
+
+    // Listen for user activity to reset inactivity timer
+    document.addEventListener('mousemove', resetInactivityTimer);
+    document.addEventListener('mousedown', resetInactivityTimer);
+    document.addEventListener('keypress', resetInactivityTimer);
+    document.addEventListener('scroll', resetInactivityTimer);
+    document.addEventListener('touchstart', resetInactivityTimer);
+
+    // Start the inactivity timer
+    resetInactivityTimer();
+
+    // Video interaction functionality
     const videoItems = document.querySelectorAll('.hero-videos .video-item');
     const videos = document.querySelectorAll('.hero-videos .video-container video');
     let overlayTimeouts = {}; // Store timeout IDs for each video
