@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Responsive video switching for mobile/desktop
+    function switchResponsiveVideo() {
+        const responsiveVideo = document.getElementById('responsive-music-video');
+        if (responsiveVideo) {
+            const isMobile = window.innerWidth <= 768;
+            const desktopSrc = 'videos/All Videos/allthestars.mp4';
+            const mobileSrc = 'videos/All Videos/Mograph Music Video Edits/birdsofafeather.mp4';
+            const currentSrc = responsiveVideo.querySelector('source').src;
+            const targetSrc = isMobile ? mobileSrc : desktopSrc;
+            
+            // Only change if the source needs to be different
+            if (!currentSrc.includes(targetSrc)) {
+                responsiveVideo.querySelector('source').src = targetSrc;
+                responsiveVideo.load(); // Reload the video with new source
+                responsiveVideo.play(); // Resume autoplay
+            }
+        }
+    }
+    
+    // Initial check
+    switchResponsiveVideo();
+    
+    // Listen for window resize
+    window.addEventListener('resize', switchResponsiveVideo);
+    
     // Auto-hide header functionality
     const header = document.querySelector('.main-header');
     let inactivityTimer;
