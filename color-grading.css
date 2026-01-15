@@ -37,7 +37,7 @@ body {
 }
 
 /* Media query for tablets and desktops */
-@media (min-width: 768px) {
+@media (min-width: 640px) {
     .sliders-gallery .container {
         /* Display 2 columns on tablets */
         grid-template-columns: repeat(2, 1fr);
@@ -185,7 +185,7 @@ body {
 .delay-2 { animation-delay: 0.4s; }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     .page-title { font-size: 2.5rem; }
     .comparison-section h2 { font-size: 1.5rem; }
     .sliders-gallery .container { gap: 3rem; }

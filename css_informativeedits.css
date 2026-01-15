@@ -167,7 +167,7 @@ body {
 .delay-1 { animation-delay: 0.2s; }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     .page-title {
         font-size: 2.5rem;
     }

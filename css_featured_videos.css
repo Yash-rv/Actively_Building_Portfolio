@@ -131,7 +131,8 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
+@media (max-width: 640px) {
     .featured-videos .container {
         flex-direction: column;
         align-items: center;

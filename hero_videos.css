@@ -4,9 +4,10 @@
 
 .hero-videos .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
+    /* allow items to shrink more so more clips fit on narrow widths */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 16px;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -32,6 +33,8 @@
     position: relative;
     aspect-ratio: 9 / 16;
     background-color: #000;
+    /* ensure the video container can shrink proportionally */
+    max-width: 100%;
 }
 
 .hero-videos .square-video .video-container {
@@ -108,7 +111,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     .hero-videos .container {
         grid-template-columns: 1fr;
         gap: 30px;

@@ -198,7 +198,7 @@
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     .loader-wrapper {
         transform: scale(1.5);
         font-size: 1.4em;
