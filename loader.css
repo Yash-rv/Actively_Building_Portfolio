@@ -5,7 +5,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0a0a0a00;
+    background-color: #161616;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,10 +25,10 @@
     justify-content: center;
     height: 120px;
     width: auto;
-    margin: 1rem;
+    margin: 2rem;
 
     font-family: "Poppins", sans-serif;
-    font-size: 1.8em;
+    font-size: 2.2em;
     font-weight: 600;
     user-select: none;
     color: #fff;
@@ -39,9 +39,9 @@
 .loader {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -50%;
     height: 100%;
-    width: 100%;
+    width: 200%;
     z-index: 1;
 
     background-color: transparent;
@@ -70,14 +70,14 @@
     height: 100%;
 
     background-image: radial-gradient(
-            circle at 50% 50%,
-            rgb(0, 122, 252) 0% 0%,
-            transparent 50%
-        ),
-        radial-gradient(circle at 45% 45%, rgb(0, 0, 0) 0%, transparent 45%),
-        radial-gradient(circle at 55% 55%, rgb(43, 36, 93) 0%, transparent 45%),
-        radial-gradient(circle at 45% 55%, rgb(15, 16, 34) 0%, transparent 45%),
-        radial-gradient(circle at 55% 45%, rgb(17, 17, 55) 0%, transparent 45%);
+      circle at 50% 50%,
+      rgb(232, 232, 232) 0% 0%,
+      transparent 50%
+    ),
+    radial-gradient(circle at 45% 45%, rgb(166, 166, 169) 0%, transparent 45%),
+    radial-gradient(circle at 55% 55%, rgb(43, 36, 93) 0%, transparent 45%),
+    radial-gradient(circle at 45% 55%, rgb(15, 16, 34) 0%, transparent 45%),
+    radial-gradient(circle at 55% 45%, rgb(17, 17, 55) 0%, transparent 45%);
     mask: radial-gradient(
         circle at 50% 50%,
         transparent 0%,
@@ -98,10 +98,10 @@
 
 @keyframes transform-animation {
     0% {
-        transform: translate(-55%);
+        transform: translate(-75%);
     }
     100% {
-        transform: translate(55%);
+        transform: translate(75%);
     }
 }
 
@@ -200,14 +200,14 @@
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .loader-wrapper {
-        transform: scale(1.5);
-        font-size: 1.4em;
+        transform: scale(2.5);
+        font-size: 1.6em;
     }
 }
 
 @media (max-width: 480px) {
     .loader-wrapper {
-        transform: scale(1);
-        font-size: 1.2em;
+        transform: scale(1.8);
+        font-size: 1.4em;
     }
 }
