@@ -265,7 +265,7 @@ h3 { font-size: 1.8rem; }
 .tagline {
     font-size: 1.4rem;
     max-width: 700px;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 25px auto;
     color: var(--secondary-text);
     text-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
