@@ -377,6 +377,30 @@ h3 { font-size: 1.8rem; }
     font-weight: 600;
 }
 
+/* Highlight Badge Styling */
+.highlight-badge {
+    position: absolute;
+    top: 10px;
+    right: -5px;
+    background-color: #ff1027;
+    color: #ffffff;
+    padding: 4px 10px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    z-index: 2;
+    box-shadow: 0 1px 3px rgba(255, 16, 39, 0.15);
+    transform: rotate(5deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover .highlight-badge {
+    transform: rotate(5deg) scale(1.05);
+    box-shadow: 0 2px 6px rgba(255, 16, 39, 0.25);
+}
+
 .card-image-wrapper {
     display: none;
 }
@@ -603,8 +627,58 @@ blockquote::after { right: -40px; bottom: -20px; }
         padding: 60px 0 40px;
     }
 
+    .section-note {
+        margin: 6px 0 28px 0 !important;
+    }
+
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .project-card {
+        min-height: 80px;
+        padding: 18px 50px 18px 18px;
+        justify-content: flex-start;
+        text-align: left;
+        border-radius: 8px;
+        background: #121212;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        position: relative;
+    }
+
+    .project-card::after {
+        content: '›';
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 300;
+        transition: all 0.3s ease;
+    }
+
+    .project-card:active::after {
+        color: rgba(255, 255, 255, 0.7);
+        right: 14px;
+    }
+
+    .project-card h3 {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        margin-right: 0;
+        font-weight: 500;
+        padding-right: 40px;
+    }
+
+    .project-card .highlight-badge {
+        top: 6px;
+        right: 12px;
+        font-size: 0.55rem;
+        padding: 3px 7px;
+        transform: rotate(3deg);
     }
 }
 
