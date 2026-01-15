@@ -33,15 +33,15 @@
     user-select: none;
     color: #fff;
 
-    transform: scale(3);
+    transform: scale(2.5);
 }
 
 .loader {
     position: absolute;
     top: 0;
-    left: -50%;
+    left: 0;
     height: 100%;
-    width: 200%;
+    width: 100%;
     z-index: 1;
 
     background-color: transparent;
@@ -98,10 +98,10 @@
 
 @keyframes transform-animation {
     0% {
-        transform: translate(-75%);
+        transform: translate(-55%);
     }
     100% {
-        transform: translate(75%);
+        transform: translate(55%);
     }
 }
 
@@ -200,14 +200,14 @@
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .loader-wrapper {
-        transform: scale(2.5);
-        font-size: 1.6em;
+        transform: scale(1.5);
+        font-size: 1.4em;
     }
 }
 
 @media (max-width: 480px) {
     .loader-wrapper {
-        transform: scale(1.8);
-        font-size: 1.4em;
+        transform: scale(1);
+        font-size: 1.2em;
     }
 }
