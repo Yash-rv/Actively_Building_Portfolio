@@ -88,14 +88,14 @@ h1, h2, h3, .logo {
 }
 
 h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; }
-h2.section-title { font-size: 2.8rem; text-align: center; margin-bottom: 60px; position: relative; }
+h2.section-title { font-size: 2.8rem; text-align: center; margin-bottom: 28px; position: relative; }
 h2.section-title::after {
     content: '';
     display: block;
     width: 60px;
     height: 3px;
     background-color: var(--accent-blue);
-    margin: 20px auto 0 auto;
+    margin: 12px auto 0 auto;
 }
 h3 { font-size: 1.8rem; }
 
@@ -336,7 +336,7 @@ h3 { font-size: 1.8rem; }
 
 /* ======== FEATURED PROJECTS GRID SECTION ======== */
 #featured-projects {
-    padding: 100px 0;
+    padding: 40px 0 100px 0;
     background-color: rgba(26, 26, 26, 0.9); /* Slightly more opaque background */
     border-top: 1px solid var(--border-grey);
 }
@@ -467,7 +467,7 @@ blockquote::after { right: -40px; bottom: -20px; }
 
 #final-cta h2 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 #final-cta p {
@@ -627,9 +627,6 @@ blockquote::after { right: -40px; bottom: -20px; }
         padding: 60px 0 40px;
     }
 
-    .section-note {
-        margin: 6px 0 28px 0 !important;
-    }
 
     .projects-grid {
         grid-template-columns: 1fr;
@@ -682,6 +679,18 @@ blockquote::after { right: -40px; bottom: -20px; }
     }
 }
 
+
+
+/* Styling for the note under 'Explore My Work' section */
+.section-note {
+    text-align: center;
+    padding: 0 10px; /* Padding for both mobile and PC modes */
+    margin: 8px 0 20px 0; /* Tighten gap below title */
+    color: #b0b0b0; /* Slightly muted text color */
+    font-size: 0.80rem;
+    line-height: 1.0;
+}
+
 @media (max-width: 480px) {
     h1 { font-size: 2.2rem; }
     h2.section-title { font-size: 1.8rem; }
@@ -691,18 +700,8 @@ blockquote::after { right: -40px; bottom: -20px; }
     blockquote::before, blockquote::after { font-size: 3rem; }
     blockquote::before { left: -20px; top: -10px; }
     blockquote::after { right: -20px; bottom: -10px; }
+    .section-note  {font-size: 0.60rem;}
 }
-
-/* Styling for the note under 'Explore My Work' section */
-.section-note {
-    text-align: center;
-    padding: 0 20px; /* Padding for both mobile and PC modes */
-    margin: 10px 0; /* Add some spacing around the note */
-    color: #b0b0b0; /* Slightly muted text color */
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
 
 /* ======== FADE-IN ANIMATION ======== */
 .fade-in {
